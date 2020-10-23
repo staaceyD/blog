@@ -13,12 +13,6 @@ class PostDetail(generic.DetailView):
     template_name = 'post_detail.html'
 
 
-class CreatePost(generic.CreateView):
-    model = Post
-    template_name = 'create_post.html'
-    fields = ['title', 'slug', 'author', 'content']
-
-
 class UpdatePost(generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
