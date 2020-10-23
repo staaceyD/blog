@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+{% if user.is_authenticated %}
 <div class="container">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
@@ -20,5 +20,9 @@
         </div>
     </div>
 </div>
+{% else %}
+<br />
+<h3> I see that You are a rule braker, but I won't report this. Just login and nobody will get hurt.</h3>
+{% endif %}
 
 {% endblock content %}
