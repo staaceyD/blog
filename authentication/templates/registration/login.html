@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-{% if user.is_authenticated %}
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
             <div class="card-body">
-                <h1>Delete Blog post</h1>
-                <br />
-                <h4>Do you want to delete <strong>{{ post.title }} </strong>??</h4>
+                <h1>Login</h1>
                 <br />
                 <table>
                     <form method="POST">
                         {% csrf_token %}
-
-                        <button class="btn btn-primary">Delete</button>
+                        {{ form.as_table }}
+                        <button class="btn btn-primary">Login</button>
 
                     </form>
                 </table>
@@ -22,9 +20,5 @@
         </div>
     </div>
 </div>
-{% else %}
-<br />
-<h3> I see that You are a rule braker, but I won't report this. Just login and nobody will get hurt.</h3>
-{% endif %}
 
 {% endblock content %}
